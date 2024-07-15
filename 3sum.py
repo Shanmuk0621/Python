@@ -38,9 +38,9 @@ for i in range(n):
 output=[]
 
 for i in range(n):
-    for j in range(n):
-        for k in range(n):
-            if (lis[i]+lis[j]+lis[k]==0):
+    for j in range(i+1,n):
+        for k in range(j+1,n):
+            if (lis[i]+lis[j]+lis[k]==0 and i!=j!=k):
                 print(lis[i],lis[j],lis[k])
                 
 
