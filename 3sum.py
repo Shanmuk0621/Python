@@ -27,6 +27,16 @@
 # Output: [[0,0,0]]
 # Explanation: The only possible triplet sums up to 0.
 
+def my_sort(lis):
+      for i in range(len(lis)):
+            temp=lis[i]
+            j=i-1
+            while (j>=0 and lis[j] > temp):
+                  lis[j+1]=lis[j]
+                  j-=1
+            lis[j+1]=temp
+
+
 n=int(input("enter a number:"))
 
 lis=[]
@@ -35,12 +45,20 @@ for i in range(n):
     ele=int(input("enter a element:"))
     lis+=[ele,]
 
+my_sort(lis)
+
 output=[]
 
-for i in range(n):
-    for j in range(i+1,n):
-        for k in range(j+1,n):
+for i in range(len(lis)):
+    for j in range(i+1,len(lis)):
+        for k in range(j+1,len(lis)):
             if (lis[i]+lis[j]+lis[k]==0 and i!=j!=k):
-                print(lis[i],lis[j],lis[k])
-                
+                output+=[[lis[i],lis[j],lis[k],]]
+newlis=[]
+       
+for i in output:
+     if (i not in newlis):
+          newlis+=[i,]
 
+print(newlis)
+     
