@@ -42,4 +42,3 @@ heap_sort(lis,n)
 for i in range(n):
     print(lis[i])
 
-
